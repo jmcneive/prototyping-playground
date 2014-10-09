@@ -16,7 +16,8 @@ gulp.task('webserver', function() {
         enable: true,
         port: 35729,
         filter: function (filename) {
-          if (filename.match(/^(.*\.(?!(htm|html)$))?[^.]*$/igm)) {
+          // Only LiveReload changes that are not in SCSS files
+          if (filename.match(/^(.*\.(?!(scss)$))?[^.]*$/igm)) {
             return true;
           } else {
             return false;
