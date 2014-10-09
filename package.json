@@ -1,6 +1,6 @@
 {
   "name": "prototyping-playground-gulp",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,9 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.8.8",
+    "gulp-filter": "^1.0.2",
+    "gulp-livereload": "^2.1.1",
+    "gulp-webserver": "^0.8.3",
     "takana": "0.0.10"
   }
 }
