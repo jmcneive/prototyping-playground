@@ -15,18 +15,17 @@ gulp.task('webserver', function() {
 
   return gulp.src('app')
     .pipe(webserver({
-      livereload: true
-        // {
-        // enable: true,
-        // filter: function (filename) {
-        //   return true;
-        //   // if (filename.match(/node_modules/)) {
-        //   //   return false;
-        //   // } else {
-        //   //   return true;
-        //   // }
-        //   }
-        // }
+      // livereload: true
+      livereload: {
+        enable: true,
+        filter: function (filename) {
+          return true;
+          if (filename.match(/node_modules/)) {
+            return false;
+          } else {
+            return true;
+          }
+        }
     }));
 });
 

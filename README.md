@@ -1,4 +1,4 @@
-## LiveReload + Takana Demo
+## Gulp, Takana, and LiveReload
 Clone the repo
 
 ```
