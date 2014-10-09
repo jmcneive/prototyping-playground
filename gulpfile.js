@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var takana = require('takana');
 var webserver = require('gulp-webserver');
-var gulpFilter = require('gulp-filter');
 
 gulp.task('takana', function() {
   takana.run({
@@ -11,21 +10,19 @@ gulp.task('takana', function() {
 });
 
 gulp.task('webserver', function() {
-  var htmlFilter = gulpFilter('**/*.html');
-
   return gulp.src('app')
     .pipe(webserver({
-      // livereload: true
       livereload: {
         enable: true,
+        port: 35729,
         filter: function (filename) {
-          return true;
-          if (filename.match(/node_modules/)) {
-            return false;
-          } else {
+          if (filename.match(/^(.*\.(?!(htm|html)$))?[^.]*$/igm)) {
             return true;
+          } else {
+            return false;
           }
         }
+      }
     }));
 });
 
